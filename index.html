@@ -44,6 +44,7 @@
         font-size: 24px;
         line-height: 28px;
       }
+
       ul {
         margin: 0;
         padding: 0;
@@ -66,14 +67,22 @@
         border-radius: 5px;
       }
 
+      .container-text-center {
+        text-align: center;
+      }
+
       .currentTemperature {
         color: black;
-        font-size: 64px;
+        font-size: 40px;
         line-height: 1;
       }
       .active {
         color: rgb(33, 33, 33);
         cursor: default;
+      }
+
+      .outfit {
+        margin-bottom: 10px;
       }
 
       .card-header description:first-letter {
@@ -134,7 +143,7 @@
             </div>
           </form>
 
-          <div class="container text-center">
+          <div class="container-text-center">
             <div class="row">
               <div class="col-6">
                 <h1 id="city"></h1>
@@ -148,7 +157,10 @@
 
                 <div class="row">
                   <div class="col-6">
-                    <div class="d-flex todays-temperature">
+                    <div
+                      class="d-flex todays-temperature"
+                      id="todays-temperature"
+                    >
                       <img src="#" alt="clear" id="icon" />
                       <div
                         class="currentTemperature"
@@ -174,6 +186,12 @@
                     </div>
                   </div>
                 </div>
+                <li>
+                  <small> Humidity: <span id="humidity"></span> %</small>
+                </li>
+                <li>
+                  <small>Wind: <span id="wind"></span>km/h</small>
+                </li>
               </div>
             </div>
           </div>
@@ -275,6 +293,10 @@
         cityElement.innerHTML = response.data.city;
         let tempElement = document.querySelector("#current-temperature");
         tempElement.innerHTML = Math.round(response.data.temperature.current);
+        let windElement = document.querySelector("#wind");
+        windElement.innerHTML = Math.round(response.data.wind.speed);
+        let humidityElement = document.querySelector("#humidity");
+        humidityElement.innerHTML = response.data.temperature.humidity;
         let description = document.querySelector("#description");
         description.innerHTML = response.data.condition.description;
         let iconElement = document.querySelector("#icon");
