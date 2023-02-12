@@ -1,7 +1,11 @@
 body {
   font-family: Roboto;
 }
-weather-app-wrapper {
+
+.container {
+  border: solid 1px;
+  border-color: rgb(34, 34, 34);
+  border-radius: 5px;
   max-width: 600px;
   margin: 30px auto;
   padding: 20px;
@@ -27,11 +31,6 @@ li {
 }
 li:first-letter {
   text-transform: capitalize;
-}
-.container {
-  border: solid 1px;
-  border-color: rgb(34, 34, 34);
-  border-radius: 5px;
 }
 
 .container-text-center {
@@ -71,4 +70,21 @@ li:first-letter {
 .week-icons p {
   font-size: 15px;
   color: black;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+.weather-forecast-temperature {
+  font-size: 13px;
 }

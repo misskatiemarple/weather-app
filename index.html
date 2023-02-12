@@ -34,138 +34,101 @@
 
   <body>
     <div class="container">
-      <div class="weather-app-wrapper">
-        <div class="weather-app">
           <form id="search-form" class="mb-3">
-            <div class="search">
+      <div class="weather-app">
+        <form id="search-form" class="mb-3">
+          <div class="search">
+            <div class="row">
+              <div class="col-3">
+                <input
+                  type="search"
+                  placeholder="Change City..."
+                  autocomplete="off"
+                  id="searchtextinput"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="bt btn-primary w-100"
+                  id="searchbutton"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Current"
+                  class="bn btn-primary w-100"
+                  id="geoSearchButton"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="container-text-center">
+          <div class="row">
+            <div class="col-6">
+              <h1 id="city"></h1>
+              <ul>
+                <li>
+                  <small>Last updated:</small>
+                  <div class="date-time" id="date-time"></div>
+                </li>
+                <li id="today"></li>
+              </ul>
+
               <div class="row">
-                <div class="col-3">
-                  <input
-                    type="search"
-                    placeholder="Change City..."
-                    autocomplete="off"
-                    id="searchtextinput"
-                  />
-                </div>
-                <div class="col-3">
-                  <input
-                    type="submit"
-                    value="Search"
-                    class="bt btn-primary w-100"
-                    id="searchbutton"
-                  />
-                </div>
-                <div class="col-3">
-                  <input
-                    type="submit"
-                    value="Current Location"
-                    class="bn btn-primary w-100"
-                    id="geoSearchButton"
-                  />
+                <div class="col-6">
+                  <div
+                    class="d-flex todays-temperature"
+                    id="todays-temperature"
+                  >
+                    <img src="#" alt="clear" id="icon" />
+                    <div
+                      class="currentTemperature"
+                      id="current-temperature"
+                    ></div>
+                    <span class="unit-links"
+                      ><a href="#" id="celsius-link" class="active">°C | </a>
+                      <a href="#" id="fahrenheit-link">°F</a></span
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-          </form>
-
-          <div class="container-text-center">
-            <div class="row">
-              <div class="col-6">
-                <h1 id="city"></h1>
-                <ul>
-                  <li>
-                    <small>Last updated:</small>
-                    <div class="date-time" id="date-time"></div>
-                  </li>
-                  <li id="today"></li>
-                </ul>
-
-                <div class="row">
-                  <div class="col-6">
-                    <div
-                      class="d-flex todays-temperature"
-                      id="todays-temperature"
-                    >
-                      <img src="#" alt="clear" id="icon" />
-                      <div
-                        class="currentTemperature"
-                        id="current-temperature"
-                      ></div>
-                      <span class="unit-links"
-                        ><a href="#" id="celsius-link" class="active">°C | </a>
-                        <a href="#" id="fahrenheit-link">°F</a></span
-                      >
-                    </div>
+            <div class="col -6">
+              <div class="outfit">
+                <div class="card text-center">
+                  <div class="card-header" id="description"></div>
+                  <div class="card-body">
+                    <p class="card-text">
+                      Wear a muffler with a mid-length jacket and knee-high
+                      boots
+                    </p>
                   </div>
                 </div>
               </div>
-              <div class="col -6">
-                <div class="outfit">
-                  <div class="card text-center">
-                    <div class="card-header" id="description"></div>
-                    <div class="card-body">
-                      <p class="card-text">
-                        Wear a muffler with a mid-length jacket and knee-high
-                        boots
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <ul>
                 <li>
                   <small> Humidity: <span id="humidity"></span> %</small>
                 </li>
                 <li>
                   <small>Wind: <span id="wind"></span>km/h</small>
                 </li>
-              </div>
+              </ul>
             </div>
           </div>
-
-          <div class="weekdays">
-            <div class="row">
-              <div class="col-2">Tue</div>
-              <div class="col-2">Wed</div>
-              <div class="col-2">Thurs</div>
-              <div class="col-2">Fri</div>
-              <div class="col-2">Sat</div>
-              <div class="col-2">Sun</div>
-            </div>
-          </div>
-          <div class="week-icons">
-            <div class="row">
-              <div class="col-2">
-                <i class="fa-solid fa-cloud-showers-heavy"></i>
-                <p>9°C</p>
-              </div>
-              <div class="col-2">
-                <i class="fa-solid fa-cloud-sun-rain"></i>
-                <p>6°C</p>
-              </div>
-              <div class="col-2">
-                <i class="fa-solid fa-cloud-sun"></i>
-                <p>3°C</p>
-              </div>
-              <div class="col-2">
-                <i class="fa-regular fa-sun"></i>
-                <p>13°C</p>
-              </div>
-              <div class="col-2">
-                <i class="fa-regular fa-sun"></i>
-                <p>12°C</p>
-              </div>
-              <div class="col-2">
-                <i class="fa-solid fa-cloud"></i>
-                <p>10°C</p>
-              </div>
-            </div>
-          </div>
-          <small
-            ><a href="https://github.com/misskatiemarple/weather-app"
-              >Open-source code</a
-            >
-            by Katie Marple</small
-          >
         </div>
+        <div class="weather-forecast" id="forecast">hello</div>
       </div>
+      <small
+        ><a href="https://github.com/misskatiemarple/weather-app"
+          >Open-source code</a
+        >
+        by Katie Marple</small
+      >
     </div>
     <script src="src/app.js"></script>
   </body>
