@@ -41,32 +41,36 @@ function handleSubmit(event) {
   search(cityInput.value);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
-
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  let forecastHTML = `<div class ="row">`;
 
-  let forecastHTML = `<div class="row">`;
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `<div class="col-2">
-        <div class="weather-forecast-date">${day}</div>
-        <img
-          src="http://openweathermap.org/img/wn/50d@2x.png"
-          alt=""
-          width="42"
-        />
-        <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> 18° </span>
-          <span class="weather-forecast-temperature-min"> 12° </span>
-        </div>
-      </div>`;
+      `
+              <div class="col-2">
+                <div class="weather-forecast-date">${day}</div>
+                <img src="#" alt ="#"" width ="36"/>
+                <div class="weather-forecast-temperature">
+                  <span class="weather-forecast-temperature-max">18°C </span>
+                  <span class="weather-forecast-temperature-min">12°C</span>
+                </div>
+            </div>`;
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "3041fdbb74ta3a686b2ca3f782407o93";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -134,4 +138,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
 search("Tokyo");
-displayForecast();
