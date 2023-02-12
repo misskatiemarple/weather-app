@@ -1,19 +1,22 @@
 body {
   font-family: Roboto;
 }
-
-.container {
-  border: solid 1px;
-  border-color: rgb(34, 34, 34);
-  border-radius: 5px;
+.weather-app {
   max-width: 600px;
   margin: 30px auto;
   padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
 }
 h1 {
   color: black;
   font-size: 24px;
   line-height: 28px;
+  margin-bottom: 0;
 }
 
 ul {
@@ -27,32 +30,41 @@ li {
   padding: 0;
   font-size: 16px;
   line-height: 19px;
-  color: black;
+  color: #878787;
 }
 li:first-letter {
   text-transform: capitalize;
 }
 
-.container-text-center {
-  text-align: center;
+.overview {
+  margin-bottom: 20px;
 }
-
+.todays-temperature img {
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
+}
 .currentTemperature {
   color: black;
-  font-size: 40px;
+  font-size: 64px;
   line-height: 1;
-}
-.active {
-  color: rgb(33, 33, 33);
-  cursor: default;
 }
 
 .outfit {
-  margin-bottom: 10px;
+  text-align: center;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
+.card-header {
+  text-transform: capitalize;
+}
+#description:first-letter {
+  text-transform: capitalize;
 }
 
-.card-header description:first-letter {
-  text-transform: capitalize;
+.card-text {
+  font-size: 16px;
+  color: #878787;
 }
 .active:hover {
   text-decoration: none;
