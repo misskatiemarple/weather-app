@@ -105,6 +105,20 @@ function displayTemperature(response) {
   iconElement.src = response.data.condition.icon_url;
   iconElement.setAttribute("alt", response.data.condition.description);
 
+  let outfit = document.querySelector("#card-text");
+  if (tempElement.innerHTML < 8) {
+    outfit.innerHTML = "Brr...! Wear a winter coat today";
+  } else if (tempElement.innerHTML < 12) {
+    outfit.innerHTML = "Wear a trench coat today";
+  } else if (tempElement.innerHTML < 16) {
+    outfit.innerHTML = "Wear a cozy sweater today";
+  } else if (tempElement.innerHTML < 20) {
+    outfit.innerHTML = "Wear a long-sleeved T-shirt or cardigan today";
+  } else if (tempElement.innerHTML < 25) {
+    outfit.innerHTML = "Wear a T-shirt today";
+  } else if (tempElement.innerHTML > 25) {
+    outfit.innerHTML = "It's hot! <br />Wear a vest or tank top today";
+  }
   celsiusTemperature = response.data.temperature.current;
 
   getForecast(response.data.coordinates);
@@ -118,9 +132,9 @@ function handleGeoPosition(event) {
 let geoButton = document.querySelector("#geoSearchButton");
 geoButton.addEventListener("click", handleGeoPosition);
 
-function searchGeoTemperature(coordinates) {
+function searchGeoTemperature(position) {
   let apiKey = "3041fdbb74ta3a686b2ca3f782407o93";
-  let url = `https://api.shecodes.io/weather/v1/current?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}`;
+  let url = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}`;
   axios.get(url).then(displayTemperature);
 }
 search("Tokyo");
