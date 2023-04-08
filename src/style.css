@@ -62,6 +62,8 @@ li:first-letter {
 .card-header {
   text-transform: capitalize;
   font-family: "oswald";
+  font-size: 18px;
+  line-height: 1;
 }
 #description:first-letter {
   text-transform: capitalize;
