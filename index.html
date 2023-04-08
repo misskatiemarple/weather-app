@@ -33,98 +33,80 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="weather-app-wrapper">
-        <div class="weather-app">
-          <form id="search-form" class="mb-3">
-            <div class="search">
-              <div class="row">
-                <div class="col-3">
-                  <input
-                    type="search"
-                    placeholder="Change City..."
-                    autocomplete="off"
-                    id="searchtextinput"
-                  />
-                </div>
-                <div class="col-3">
-                  <input
-                    type="submit"
-                    value="Search"
-                    class="bt btn-primary w-100"
-                    id="searchbutton"
-                  />
-                </div>
-                <div class="col-3">
-                  <input
-                    type="submit"
-                    value="Current"
-                    class="bn btn-primary w-100"
-                    id="geoSearchButton"
-                  />
-                </div>
-              </div>
-            </div>
+    <div class="page-wrapper">
+      <div class="weather-app">
+        <div class="search mb-4">
+          <form id="search-form">
+            <input
+              type="search"
+              placeholder="Change City..."
+              autocomplete="off"
+              id="searchtextinput"
+            />
+            <input type="submit" value="Search" id="searchbutton" />
+            <input type="submit" value="Current" id="geoSearchButton" />
           </form>
+        </div>
 
-          <div class="overview">
-            <div class="row">
-              <div class="col-6">
-                <h1 id="city"></h1>
-                <ul>
-                  <li>
-                    <small>Last updated:</small>
-                    <div class="date-time" id="date-time"></div>
-                  </li>
-                  <li id="today"></li>
-                </ul>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <h1 id="city">Tokyo</h1>
+              <ul>
+                <li>
+                  <small>Last updated:</small>
+                  <div id="date-time"></div>
+                </li>
+                <li id="today"></li>
+              </ul>
 
-                <div class="row">
-                  <div class="col-6">
+              <div class="row">
+                <div class="col-6">
+                  <div
+                    class="d-flex todays-temperature"
+                    id="todays-temperature"
+                  >
+                    <img src="#" alt="clear" id="icon" />
                     <div
-                      class="d-flex todays-temperature"
-                      id="todays-temperature"
-                    >
-                      <img src="#" alt="clear" id="icon" />
-                      <div
-                        class="currentTemperature"
-                        id="current-temperature"
-                      ></div>
-                      <span class="unit-links">°C </span>
-                    </div>
+                      class="currentTemperature"
+                      id="current-temperature"
+                    ></div>
+                    <span class="unit-links">°C </span>
                   </div>
                 </div>
-                <ul>
-                  <li>
-                    <small> Humidity: <span id="humidity"></span>%</small>
-                  </li>
-                  <li>
-                    <small>Wind: <span id="wind"></span>km/h</small>
-                  </li>
-                </ul>
               </div>
+              <ul>
+                <li>
+                  <small> Humidity: <span id="humidity"></span>%</small>
+                </li>
+                <li>
+                  <small>Wind: <span id="wind"></span>km/h</small>
+                </li>
+              </ul>
+            </div>
 
-              <div class="col -6">
-                <div class="outfit">
-                  <div class="card-header" id="description"></div>
-                  <div class="card-body">
-                    <p class="card-text" id="card-text"></p>
-                  </div>
+            <div class="col -6">
+              <div class="outfit">
+                <div class="card-header" id="description"></div>
+                <div class="card-body">
+                  <p class="card-text" id="card-text"></p>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="weather-forecast" id="forecast"></div>
         </div>
-        <small
-          ><a href="https://github.com/misskatiemarple/weather-app"
-            >Open-source code</a
-          >
-          by Katie Marple</small
+
+        <div class="weather-forecast" id="forecast" ></div>
+     
+        <footer class="mt-4 text-center">
+      <small
+        ><a href="https://github.com/misskatiemarple/weather-app"
+          >Open-source code</a
         >
-      </div>
-    </div>
+        by Katie Marple</small
+      ></footer>
+
+
     <script src="src/app.js"></script>
   </body>
 </html>

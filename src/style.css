@@ -8,7 +8,7 @@ body {
   border: 1px solid #dadde1;
   border-radius: 5px;
 }
-.weather-app-wrapper {
+.page {
   max-width: 600px;
   margin: 30px auto;
 }
@@ -36,7 +36,7 @@ li:first-letter {
   text-transform: capitalize;
 }
 
-.overview {
+.container {
   margin-bottom: 20px;
 }
 .todays-temperature img {
