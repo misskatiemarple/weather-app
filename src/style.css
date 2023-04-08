@@ -1,12 +1,19 @@
 body {
   font-family: Roboto;
 }
+
 .weather-app {
   max-width: 600px;
   margin: 30px auto;
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(253, 239, 132) 0%,
+    rgb(247, 198, 169) 54.2%,
+    rgb(21, 186, 196) 100.3%
+  );
 }
 .page {
   max-width: 600px;
