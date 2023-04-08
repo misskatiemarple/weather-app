@@ -14,8 +14,10 @@ body {
 }
 h1 {
   color: black;
-  font-size: 24px;
-  line-height: 28px;
+  font-family: "oswald";
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 80px;
   margin-bottom: 0;
 }
 
@@ -46,8 +48,10 @@ li:first-letter {
 }
 .currentTemperature {
   color: black;
-  font-size: 64px;
+  font-size: 60px;
   line-height: 1;
+  font-family: "oswald";
+  font-weight: 200;
 }
 
 .outfit {
@@ -57,6 +61,7 @@ li:first-letter {
 }
 .card-header {
   text-transform: capitalize;
+  font-family: "oswald";
 }
 #description:first-letter {
   text-transform: capitalize;
