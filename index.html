@@ -56,7 +56,7 @@
           />
         </form>
 
-        <div class="container">
+        <div class="container overview">
           <div class="row">
             <div class="col-6">
               <h1 id="city"></h1>
@@ -67,30 +67,31 @@
                 </li>
                 <li id="today"></li>
               </ul>
-
-              <div class="row">
-                <div class="col-6">
-                  <div
-                    class="d-flex todays-temperature"
-                    id="todays-temperature"
-                  >
-                    <img src="#" alt="clear" id="icon" />
+              <div class="container">
+                <div class="row">
+                  <div class="col-6">
                     <div
-                      class="currentTemperature"
-                      id="current-temperature"
-                    ></div>
-                    <span class="unit-links">°C </span>
+                      class="d-flex todays-temperature"
+                      id="todays-temperature"
+                    >
+                      <img src="#" alt="clear" id="icon" />
+                      <div
+                        class="currentTemperature"
+                        id="current-temperature"
+                      ></div>
+                      <span class="unit-links">°C </span>
+                    </div>
                   </div>
                 </div>
+                <ul>
+                  <li>
+                    <small> Humidity: <span id="humidity"></span>%</small>
+                  </li>
+                  <li>
+                    <small>Wind: <span id="wind"></span>km/h</small>
+                  </li>
+                </ul>
               </div>
-              <ul>
-                <li>
-                  <small> Humidity: <span id="humidity"></span>%</small>
-                </li>
-                <li>
-                  <small>Wind: <span id="wind"></span>km/h</small>
-                </li>
-              </ul>
             </div>
 
             <div class="col -6">
